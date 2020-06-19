@@ -9,14 +9,14 @@
 // ----------------------------------------------------
 
 // Get references to the tbody element, input fields and button
-var $tbody = document.querySelector("tbody");
-var $dateInput = document.querySelector("#datetime");
-var $stateInput = document.querySelector("#state");
-var $cityInput = document.querySelector("#city");
-var $countryInput = document.querySelector("#country");
-var $shapeInput = document.querySelector("#shape");
-var $searchBtn = document.querySelector("#search");
-var $resetBtn = document.querySelector("#reset");
+let $tbody = document.querySelector("tbody");
+let $dateInput = document.querySelector("#datetime");
+let $stateInput = document.querySelector("#state");
+let $cityInput = document.querySelector("#city");
+let $countryInput = document.querySelector("#country");
+let $shapeInput = document.querySelector("#shape");
+let $searchBtn = document.querySelector("#search");
+let $resetBtn = document.querySelector("#reset");
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
@@ -25,22 +25,22 @@ $searchBtn.addEventListener("click", handleSearchButtonClick);
 $resetBtn.addEventListener("click", handleResetButtonClick);
 
 // Create a copy of the data
-var tableData = data;
+let tableData = data;
 
 // Build table with non-filtered data
 function renderTable() {
   $tbody.innerHTML = "";
-  for (var i = 0; i < tableData.length; i++) {
+  for (let i = 0; i < tableData.length; i++) {
     // Get current address object and fields
-    var address = tableData[i];
+    let address = tableData[i];
     console.log(address)
     var fields = Object.keys(address);
     // Create new row in tbody, set index to be i + startingIndex
-    var $row = $tbody.insertRow(i);
-    for (var j = 0; j < fields.length; j++) {
+    let $row = $tbody.insertRow(i);
+    for (let j = 0; j < fields.length; j++) {
       // For each field in address object, create new cell and set inner text to be current value at current address field
-      var field = fields[j];
-      var $cell = $row.insertCell(j);
+      let field = fields[j];
+      let $cell = $row.insertCell(j);
       $cell.innerText = address[field];
     }
   }
@@ -48,16 +48,16 @@ function renderTable() {
 
 // Build search table for filtered data
 function handleSearchButtonClick() {
-  var filterDate = $dateInput.value;
-  var filterState = $stateInput.value.trim().toLowerCase();
-  var filterCity = $cityInput.value.trim().toLowerCase();
-  var filterCountry = $countryInput.value.trim().toLowerCase();
-  var filterShape = $shapeInput.value.trim().toLowerCase();
+  let filterDate = $dateInput.value;
+  let filterState = $stateInput.value.trim().toLowerCase();
+  let filterCity = $cityInput.value.trim().toLowerCase();
+  let filterCountry = $countryInput.value.trim().toLowerCase();
+  let filterShape = $shapeInput.value.trim().toLowerCase();
 
   // Filter on date
   if (filterDate != "") {
     tableData = data.filter(function (address) {
-      var addressDate = address.datetime;
+      let addressDate = address.datetime;
       return addressDate === filterDate;
     });
   }
@@ -66,7 +66,7 @@ function handleSearchButtonClick() {
   // Filter on state
   if (filterState != "") {
     tableData = tableData.filter(function (address) {
-      var addressState = address.state;
+      let addressState = address.state;
       return addressState === filterState;
     });
   }
@@ -75,7 +75,7 @@ function handleSearchButtonClick() {
   // Filter on city
   if (filterCity != "") {
     tableData = tableData.filter(function (address) {
-      var addressCity = address.city;
+      let addressCity = address.city;
       return addressCity === filterCity;
     });
   }
@@ -84,7 +84,7 @@ function handleSearchButtonClick() {
   // Filter on country
   if (filterCountry != "") {
     tableData = tableData.filter(function (address) {
-      var addressCountry = address.country;
+      let addressCountry = address.country;
       return addressCountry === filterCountry;
     });
   }
@@ -93,7 +93,7 @@ function handleSearchButtonClick() {
   // Filter on shape
   if (filterShape != "") {
     tableData = tableData.filter(function (address) {
-      var addressShape = address.shape;
+      let addressShape = address.shape;
       return addressShape === filterShape;
     });
   }
