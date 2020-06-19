@@ -3,7 +3,7 @@
 ### Author:  Rob Gauer
 ### Date Due:  June 20, 2020
 
-![NasaAliens-R-Real.PNG](Instructions/StarterCode/static/images/NasaAliens-R-Real.PNG)
+![Instructions/StarterCode/static/images/NasaAliens-R-Real.PNG](NasaAliens-R-Real.PNG)
 
 # JavaScript Homework - JavaScript and DOM Manipulation
 

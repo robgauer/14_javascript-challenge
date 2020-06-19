@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Web page tab-->
+<head>
+    <meta charset="utf-8">
+    <title>UFO Sightings Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+      
+<!--Web page company logo-->
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">ALIENS-R-REAL
+                    <img class="nav-ufo" src="static/images/ufo.svg">
+                    </a>
+                </div>
+            </div>
+        </nav>
+  
+        <!--Welcome message-->
+        <div class="hero text-center">
+            <h1>UFO Sightings</h1>
+            <p>The Truth is Out There...</p>
+            <p>The extra-terrestrial menace has come to Earth and we here at ALIENS-R-REAL have collected all of the eye-witness reports we could to prove it!</p>
+            <p>So if would like to see the evidence? Enter a Date between 1/1/2010 and 1/13/2010 and then select 'Filter Table'</p>
+            <p>YOU too will become a believer!</p>
+        </div>
+    
+        <!--Filter selection-->
+        <div class="container">
+            <div class="row margin-top-50">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <h4>Enter Date</h4>
+                        <input type="datetime" class="form-control" id="datetime" placeholder="1/11/2010">
+                        <!--Select Filter Table to display query of data selected-->
+                        <a id="search" class="btn btn-default">Filter Table</a>
+                        <a id="reset" class="btn btn-default" onClick="window.location.reload()">Reset Table</a>
+                    </div>                  
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!--Display the table data output to web browser striped-->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="table-head">Date</th>
+                            <th class="table-head">City</th>
+                            <th class="table-head">State</th>
+                            <th class="table-head">Country</th>
+                            <th class="table-head">Shape</th>
+                            <th class="table-head">Duration</th>
+                            <th class="table-head">Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="index.html"> ALIENS-R-REAL UFO Sightings</a>
+            </div>
+        </footer>          
+   
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    
+    <!--Call the data file-->
+    <script src="static/data/data.js" type="text/javascript"></script>
+    
+    <!--Call the application JavaScript code file-->
+    <script src="static/js/appLevel1.js" type="text/javascript"></script>  
+
+</body>
+
+</html>
